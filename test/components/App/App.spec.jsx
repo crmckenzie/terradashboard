@@ -1,6 +1,4 @@
-jest.unmock('../App');
-
-import App from '../App';
+import App from '../../../src/components/App/App.js';
 import React from 'react';
 import { shallow } from 'enzyme';
 

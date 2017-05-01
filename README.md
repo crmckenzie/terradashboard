@@ -13,9 +13,9 @@
 1. npm i -D karma-sourcemap-loader
 1. npm i -D karma-phantomjs-launcher
 1. npm i -D karma-webpack
-1. npm update webpack
-1. npm update react
-1. npm update eslint
+1. npm uninstall jest
+1. remove all references to jest in [package.json](package.json)
+1. comment out `"extends": "airbnb"` in [.eslintrc](.eslintrc)
 1. Make the following changes to package.json
 ```javascript
   "karma": "SET BABEL_ENV=development&&SET NODE_ENV=test&&karma start config/karma.conf.js"    
@@ -125,7 +125,7 @@ testsContext.keys().forEach(testsContext);
 // output at when the test were run
 console.info(`TESTS RAN AT ${new Date().toLocaleTimeString()}`);
 ```
-
+1. delete [__tests__](/src/components/App/__tests__) folder.
 ## React Starter Kit — "isomorphic" web app boilerplate
 
 [![Support us on Bountysource](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/banner.png)](https://salt.bountysource.com/teams/react-starter-kit)<br>
