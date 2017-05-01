@@ -5,7 +5,6 @@
 1. npm install
 1. npm i -D karma
 1. npm i -D karma-spec-reporter
-1. npm i -D karma-spec-reporter
 1. npm i -D chai
 1. npm i -D karma-chai
 1. npm i -D mocha
@@ -112,6 +111,19 @@ module.exports = function(config) {
     },
   })
 }
+```
+1. Create test/testhelper.js
+```javascript
+// polyfill PhantomJS environment
+import 'babel-polyfill'
+import 'whatwg-fetch'
+
+// require all the test files in the test folder that end with Spec.js or Spec.jsx
+const testsContext = require.context(".", true, /spec.jsx?$/);
+testsContext.keys().forEach(testsContext);
+
+// output at when the test were run
+console.info(`TESTS RAN AT ${new Date().toLocaleTimeString()}`);
 ```
 
 ## React Starter Kit — "isomorphic" web app boilerplate
